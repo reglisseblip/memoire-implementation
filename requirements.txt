@@ -1,0 +1,19 @@
+# Versions the campaign ran on: Python 3.11.9, Windows 11.
+# Every line below is imported somewhere in textagents/ or tests/.
+
+# --- Data and numerics ---------------------------------------------------
+pandas==2.2.3
+numpy==2.2.1
+scipy==1.17.1              # analysis/oos.py, for the normal tail of the Clark-West test
+pyarrow==21.0.0            # the parquet engine pandas reaches for; never imported directly
+
+# --- Econometrics --------------------------------------------------------
+statsmodels==0.14.6        # OLS, HAC Newey-West, the nested Wald tests
+
+# --- Model calls ---------------------------------------------------------
+openai==2.9.0              # client for any OpenAI-compatible endpoint, through base_url
+pydantic==2.12.5           # the structured-output schemas
+typing_extensions==4.15.0  # TypedDict on 3.11, in chain/state.py
+
+# --- Tests ---------------------------------------------------------------
+pytest==9.0.1              # python -m pytest tests/ -q

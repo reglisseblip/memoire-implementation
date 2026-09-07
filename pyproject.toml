@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "textagents"
+version = "1.0.0"
+description = "Multi-agent LLM reading of financial text, tested against a HAR volatility baseline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=2.2",
+    "scipy>=1.15",
+    "pyarrow>=19",
+    "statsmodels>=0.14",
+    "openai>=2.0",
+    "pydantic>=2.10",
+    "typing_extensions>=4.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+textagents-campaign = "textagents.cli.run_campaign:main"
+textagents-single = "textagents.cli.run_single:main"
+
+[tool.setuptools.packages.find]
+include = ["textagents*"]
+
+[tool.setuptools.package-data]
+textagents = ["prompts/*.txt", "prompts/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

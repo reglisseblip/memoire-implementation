@@ -1,0 +1,41 @@
+# ============================================================
+#  Secrets. No API key in the history, private repository or not.
+# ============================================================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# ============================================================
+#  What a run produces. All of it regenerates from the code:
+#  the response cache, the ledgers, the result tables.
+# ============================================================
+/data/
+/runs/
+/results/
+*.tmp
+
+# ============================================================
+#  Python
+# ============================================================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# ============================================================
+#  Editors and operating systems
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
